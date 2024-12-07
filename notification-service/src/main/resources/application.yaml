@@ -1,0 +1,21 @@
+server:
+  port: 8003
+
+spring:
+  application:
+    name: msvc-notification
+
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: notification
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+    topic:
+      name: notificationTopic
+
+  config:
+    import: configserver:http://localhost:8888/
