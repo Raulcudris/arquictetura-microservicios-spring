@@ -6,6 +6,9 @@ server:
   port: 8761
 
 eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true # Usar la IP para evitar problemas de resolución de nombres
   client:
     register-with-eureka : false
     fetch-registry: false

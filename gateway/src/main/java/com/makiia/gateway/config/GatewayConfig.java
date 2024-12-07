@@ -23,14 +23,14 @@ public class GatewayConfig {
 
                 .route("msvc-jobservice", r -> r.path("/v1/job-service/**")
                         .filters(f -> f.filter(filter))
-                        .uri("lb://job-service"))
+                        .uri("lb://msvc-jobservice"))
 
                 .route("msvc-notification", r -> r.path("/v1/notification/**")
                         .filters(f -> f.filter(filter))
-                        .uri("lb://notification-service"))
+                        .uri("lb://msvc-notification"))
 
                 .route("msvc-auth", r -> r.path("/v1/auth/**")
-                        .uri("lb://auth-service"))
+                        .uri("lb://msvc-auth"))
 
                 .route("msvc-filestorage", r -> r.path("/v1/file-storage/**")
                         .filters(f -> f.filter(filter))

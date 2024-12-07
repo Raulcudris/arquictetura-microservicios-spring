@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
-@FeignClient(name = "msvc-filestorage", path = "/v1/file-storage")
+@FeignClient(name = "msvc-fileStorage", path = "/v1/file-storage")
 public interface FileStorageClient {
     @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     ResponseEntity<String> uploadImageToFIleSystem(@RequestPart("image") MultipartFile file);
